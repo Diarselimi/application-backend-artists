@@ -34,7 +34,7 @@ class Album
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Song", mappedBy="album")
+     * @ORM\OneToMany(targetEntity="App\Entity\Song", mappedBy="album", cascade={"persist"})
      */
     private $songs;
 

@@ -29,12 +29,13 @@ class Artist
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Album", mappedBy="artist")
+     * @ORM\OneToMany(targetEntity="App\Entity\Album", mappedBy="artist", cascade={"persist"})
      */
     private $Albums;
 
-    public function __construct()
+    public function __construct($name)
     {
+        $this->name = $name;
         $this->Albums = new ArrayCollection();
     }
 
